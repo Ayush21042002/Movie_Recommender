@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import scipy.sparse as sp
 import pandas as pd
+from flask_cors import CORS
 import json
 
 def extractFeaturesNew(data):
@@ -39,7 +40,7 @@ def weighted_rating(x,c,m):
     return (v/(v+m) * R) + (m/(m+v) * c)
 
 app = Flask(__name__)
-
+CORS(app)
 @app.route('/')
 def get_page():
     return json.dumps("Welcome To Movie Recommender System")
@@ -85,4 +86,4 @@ def get_top_rated_movies():
     return json.dumps(q_movies[['id','title_y','image_url']].head(20).to_dict('records'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
