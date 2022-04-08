@@ -11,14 +11,6 @@ The repository contains the code for creating a recommendation system with Demog
 
 <img src="./webapp-recording.gif" height=400 width=600>
 
-## Webapp
-
-The Webapp implementation is within /web_app folder
-
-Frontend is implemented in React 
-Backend is implemented using Flask
- 
-  
 <b>Running the server</b>
 
 ```
