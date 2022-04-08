@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://devops-ai.herokuapp.com/",
   "homepage": "http://Ayush21042002.github.io/Movie_Recommender", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",

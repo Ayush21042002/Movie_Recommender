@@ -6,6 +6,8 @@ import MovieList from './components/MovieList';
 import Search from './components/Search';
 import SuggestionList from './components/SuggestionList';
 
+const url = "https://devops-ai.herokuapp.com";
+
 function App() {
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -18,27 +20,27 @@ function App() {
   const [recommendedMovies, setRecommendedMovies] = useState([])
   
   useEffect(() => {
-    fetch('/get_movies_list').then(
+    fetch(url + '/get_movies_list').then(
       res => res.json()
     ).then(
       data => setMoviesList(data)
     )
-    fetch('/get_popular_movies').then(
+    fetch(url + '/get_popular_movies').then(
       res => res.json()
     ).then(
       data => setPopularMovies(data)
     )
-    fetch("/get_top_rated_movies")
+    fetch(url + "/get_top_rated_movies")
       .then((res) => res.json())
       .then((data) => setTopRatedMovies(data));
   }, [])
 
   useEffect(() => {
     if(movieId !== ""){
-      fetch("/get_movie_info?id=" + movieId)
+      fetch(url + "/get_movie_info?id=" + movieId)
         .then((res) => res.json())
         .then((data) => setMovieInfo(data));
-      fetch("/get_recommended_movies?id=" + movieId)
+      fetch(url + "/get_recommended_movies?id=" + movieId)
         .then((res) => res.json())
         .then((data) => setRecommendedMovies(data));
     }
