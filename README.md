@@ -1,6 +1,9 @@
 # Movie_Recommendation_System
 The repository contains the code for creating a recommendation system with Demographic and Content based filtering recommendation methods and a webapp for the system.
 
+## Hosted App:
+https://ayush21042002.github.io/Movie_Recommender/
+
 ## Screenshots
 
 <p align="left">
